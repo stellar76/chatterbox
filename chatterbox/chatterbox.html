@@ -1,0 +1,34 @@
+<head>
+    <title>chatterbox</title>
+    <link href="animate.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+            	{{> loginButtons}}
+            </div>
+            <div class="col-lg-4">
+                <div class="chatbox">
+                    <ul>
+                        {{#each convos}} {{> convo}} {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<template name="convo">
+    <li class="animated fadeInDown">
+        <ctime>
+            {{date}}
+        </ctime>
+        <cname>
+            {{name}} said:
+        </cname>
+        <cmessage>
+            {{{content}}}
+        </cmessage>
+    </li>
+</template>
